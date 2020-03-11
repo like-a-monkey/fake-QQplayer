@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .father{
+        height:200px;
+        width:200px;
+        background-color: #bfa;
+        position:relative;
+    }
+    .son{
+        height:100px;
+        width:100px;
+        background-color: red;
+        /*position:absolute;*/
+        /*left:400px;*/
+        /*top:200px;*/
+    }
+</style>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+       // $('.father').mouseover(function(){
+       //     console.log("移入");
+       //  });
+       // $('.father').mouseout(function(){
+       //      console.log("移出");//子元素定位在父元素外部是依然会触发
+       //  });//在父类移入子类的时候也会触发不合理
+       //  $('.father').mouseenter(function(){
+       //           console.log("移入");
+       //        });
+       //  $('.father').mouseleave(function(){
+       //      console.log("移出");
+       //  });//在父类移入子类的时候也不会触发 比较合理
+       //
+       //  $('.father').hover(function(){
+       //      console.log("移入");
+       //  },function(){
+       //      console.log("移出");
+       //  });//以mouseleave mouseenter 为基础设计的函数 输入连个参数说明是移入触发第一个 移出触发第二个
+       //  $('.father').hover(function(){
+       //      console.log('移入移出时都会触发');
+       //  });//只有一个函数 则移入移出时都会触发  子元素定位在父元素外部是依然会触发
+
+    });
+</script>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

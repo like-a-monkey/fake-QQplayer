@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function fun(){
+                alert(123);
+            }
+            $('button').click(fun);
+            $('button').on('click',function(){//同类型不会相互覆盖 不同于js
+                alert(456);//on方法效率略低 但是事件齐全
+            });
+            $('button').mouseenter(function(){//可以集体绑定
+                alert("mouseenter");
+            });
+            $('button').mouseleave(function(){//可以集体绑定
+                alert("mouseleave");
+            });
+            // $('button').off();//无参数默认移除所有事件
+            // $('button').off('click');//一个参数 移除所有同类型事件
+            // $('button').off('click',fun);//两个参数 移除对应类型对应函数事件
+
+        });
+
+    </script>
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

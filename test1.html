@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>标题</title>
+    </head>
+    <body>
+<!-- 搜索引擎中除标题title之外，h1标题最重要 -->
+<!-- 在HTML中，字符之中写再多的空格也会被视为一个空格 -->
+<p>  窗前明月光，疑是地上霜，举头望明月，低头思故乡。</p>
+<!--有一些特殊符号，如<>有时无法在浏览器中解析出来，需要转义符号
+    &实体的名字t -->
+        <h1>一级标题</h1>
+        <h2>二级标题</h2>
+        <h3>三级标题</h3>
+        <h4>四级标题</h4>
+        <h5>五级标题</h5>
+        <h6>六级标题</h6>
+    </body>
+</html>
+<script type="text/javascript">
+
+function fun1(){
+    var a = 1;
+    fun2();
+    console.log(a);
+}
+function fun2(){
+    a = a+1;
+}
+fun1();
+// function fun(){
+//
+// }
+// console.log(fun.prototype);
+// function Father(){
+// }
+// function Son(){
+// }
+// Son.prototype.fun = function(){ console.log("原来的prototype区域的函数")};
+// var son = new Son();
+// var father = new Father();
+// Son.prototype =father;//让Son的原始对象指向Father的实例对象
+// var son1 = new Son();
+// console.log(son.__proto__);
+// console.log(son1.__proto__);
+// son.fun();//
+//我又试了一下 如果只是单纯的添加修改属性的话他们的prototype是同一块
+//但是一旦对整个protype来赋值 就会分出另一块来了
+</script>

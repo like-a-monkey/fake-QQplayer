@@ -1,0 +1,458 @@
+*{
+    padding:0;
+    margin:0;
+}
+._mCS_1 .mCSB_dragger .mCSB_dragger_bar{
+    width:8px;
+}
+.mask_bg{
+    height:100%;
+    width:100%;
+    position:absolute;
+    background:url('1/images/lnj.jpg') no-repeat 0 0;
+    top:0;
+    left:0;
+    z-index:-2;
+    filter: blur(100px);
+    filter: blur(100px);
+}
+.mask{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    background-color:rgba(0,0,0,0.35);
+
+}
+
+.header{
+    width:100%;
+    height:45px;
+}
+.bodyer{
+    width:100%;
+    height:700px;
+}
+.bodyer .bodyer_in{
+    width:1700px;
+    height:100%;
+    margin:0 auto;
+}
+.footer{
+    width:100%;
+    height:100px;
+}
+.footer .footer_in{
+    width:1700px;
+    height:100%;
+    margin:0 auto;
+    user-select: none;
+}
+.header .logo{
+    display:inline-block;
+    height:21px;
+    width:78px;
+    background:url("1/images/player_logo.png") no-repeat 0 0;
+    margin:10px 0 0 20px;
+    opacity:0.5;
+}
+.header .logo:hover{
+    opacity:1;
+}
+.header .register{
+    float:right;
+    list-style: none;
+}
+.header .register li{
+    float:left;
+    color:rgba(255,255,255,0.5);
+    margin:10px 20px 0 0;
+}
+.header .register li:hover{
+    color:rgba(255,255,255,1)
+}
+.bodyer_in .bodyer_in_left{
+    height:100%;
+    width:1200px;
+    float:left;
+}
+.bodyer_in .bodyer_in_right{
+    height:100%;
+    width:500px;
+    float:right;
+}
+.bodyer_in .bodyer_in_left .singFunction {
+    height:70px;
+    width:100%;
+    user-select: none;
+}
+.bodyer_in .bodyer_in_left .singList {
+    height:630px;
+    width:100%;
+    overflow: auto;
+}
+.singFunction span{
+    display:inline-block;
+    height:40px;
+    width:15%;
+    border:1px solid white;
+    border-radius:5px;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+    opacity: 0.5;
+    margin-top:15px;
+}
+.singFunction span:hover{
+    opacity: 1;
+}
+
+.singFunction span i{
+    display:inline-block;
+    height:18px;
+    width:18px;
+    background: url('1/images/icon_sprite.png') no-repeat 0 0;
+    vertical-align: -5px;
+    margin-right:10px;
+}
+.singFunction span:nth-child(1) i{
+    background-position:-60px -20px;
+}
+.singFunction span:nth-child(2) i{
+    background-position:-20px -20px;
+}
+.singFunction span:nth-child(3) i{
+    background-position:-40px -240px;
+}
+.singFunction span:nth-child(4) i{
+    background-position:-100px -20px;
+}
+.singFunction span:nth-child(5) i{
+    background-position:-40px -300px;
+}
+.singList li div{
+    float:left;
+}
+.singList li {
+    user-select: none;
+    list-style: none;
+    width:100%;
+    height:60px;
+    color:rgba(255,255,255,0.5);
+    font-size:17px;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+    line-height: 60px;
+}
+
+.singList li .list_check{
+    height:60px;
+    width:40px;
+}
+.list_check span{
+    display:inline-block;
+    height:18px;
+    width:18px;
+    margin-top:20px;
+    border:2px solid white;
+    opacity:0.5;
+}
+.singList li .list_number{
+    height:60px;
+    width:50px;
+}
+.singList li .list_number_on{
+    background:url('1/images/wave.gif') no-repeat 0 center;
+    background-size:15px 15px;
+    color:transparent;
+}
+.singList li .list_name{
+    height:60px;
+    width:650px;
+
+}
+.singList li .list_singer{
+    height:60px;
+    width:200px;
+}
+.list_name .menu{
+    float: right;
+    display: none;
+}
+
+.menu a{
+    display: inline-block;
+    height:36px;
+    width:36px;
+    background:url('1/images/icon_list_menu.png') no-repeat;
+    vertical-align: -10px;
+    margin-right:10px;
+    opacity: 0.5;
+
+}
+.menu a:hover{
+    opacity: 1;
+}
+.menu .play_stop{
+    background-position:-120px 0px;
+}
+.menu .play{
+    background-position:-120px -200px;
+}
+.list_name .menu a:nth-child(2){
+    background-position:-120px -80px;
+}
+.list_name .menu a:nth-child(3){
+    background-position:-120px -120px;
+}
+.list_name .menu a:nth-child(4){
+    background-position:-120px -40px
+}
+.list_time a{
+    float:left;
+    display: inline-block;
+    height:36px;
+    width:36px;
+    background:url('1/images/icon_list_menu.png') no-repeat -120px -160px;
+    margin:10px 5px 0 0;
+    opacity: 0.5;
+    display: none;
+}
+.list_time a:hover{
+    opacity:1;
+}
+.list_check .choose{
+    background:url('1/images/icon_sprite.png') no-repeat -20px -200px;
+    opacity:1;
+}
+.album{
+    text-align: center;
+    font-size:17px;
+    color:rgba(255,255,255,0.5);
+    height:400px;
+    width:100%;
+    padding-top:15px;
+    box-sizing: border-box;
+    user-select: none;
+}
+.album div{
+    margin-top:15px;
+}
+.album .albumImg{
+    display: inline-block;
+    width:201px;
+    height: 180px;
+    background:url('1/images/album_cover_player.png');
+    text-align:left;
+}
+.albumImg img{
+    width:180px;
+    height:180px;
+}
+.song_name a,.singer_name a,.album_name a{
+    text-decoration:none;
+    color:rgba(255,255,255,0.5);
+}
+.song_name a:hover,.singer_name a:hover,.album_name a:hover{
+    color:rgba(255,255,255,1);
+}
+.lyricBox{
+    position: relative;
+    width:500px;
+    height:260px;
+    overflow: hidden;
+
+}
+.lyric ul{
+    position: absolute;
+    width:100%;
+    height:260px;
+    list-style: none;
+    color:rgba(255,255,255,0.5);
+    font-size:16px;
+    text-align: center;
+    user-select: none;
+    top:0px;
+}
+.lyric ul li{
+    line-height:40px;
+}
+.lyric ul .lyric_on{
+    color:rgba(49,194,124,1);
+}
+.songIntroduce{
+    padding-top:25px;
+    width:1060px;
+    height:75px;
+    float:left;
+}
+
+.footer_in a{
+    display: inline-block;
+    color:#fff;
+    text-decoration:none;
+    margin:40px 25px 0 0;
+    float:left;
+    opacity: 0.5;
+}
+.footer_in a:hover{
+    opacity: 1;
+}
+.footer_in .music_pre{
+    height:23px;
+    width:23px;
+    background:url('1/images/player.png')  no-repeat 0 -29px;
+}
+.footer_in .music_play{
+    height:30px;
+    width:22px;
+    background:url('1/images/player.png')  no-repeat 0 0;
+    margin-top:37px;
+}
+.footer_in .music_stop{
+    background-position:-27px 0;
+}
+.footer_in .music_next{
+    height:23px;
+    width:23px;
+    background:url('1/images/player.png')  no-repeat 0 -52px;
+}
+#mode{
+    float: left;
+    display: inline-block;
+    height:24px;
+    width:30px;
+    margin-right:22px;
+}
+/*防止图标切换抖动*/
+.footer_in .mode{
+    height:22px;
+    width:30px;
+    background:url('1/images/player.png')  no-repeat 0 -74px;
+}
+.footer_in .random_play{
+    height:22px;
+    width:30px;
+    background-position:0 -74px;
+}
+
+.footer_in .circle_play{
+    height:24px;
+    width:26px;
+    background-position:0 -232px;
+}
+.footer_in .list_circle_play{
+    height:24px;
+    width:26px;
+    background-position:0 -208px;
+}
+.footer_in .ordered_play{
+    height:22px;
+    width:25px;
+    background-position:0 -260px;
+}
+
+.footer_in .fav{
+    height:22px;
+    width:24px;
+    background:url('1/images/player.png')  no-repeat 0 -95px;
+}
+.footer_in .downLoad{
+    height:22px;
+    width:24px;
+    background:url('1/images/player.png')  no-repeat 0 -120px;
+}
+.footer_in .comment{
+    height:25px;
+    width:25px;
+    background:url('1/images/player.png')  no-repeat 0 -429px;
+}
+.footer_in .only{
+    height:29px;
+    width:76px;
+    background:url('1/images/player.png')  no-repeat 0 -281px;
+    margin-top:37px;
+
+}
+.playerVoice{
+    float: right;
+    width:150px;
+    height:100%;
+    position: relative;
+}
+.playerVoice a{
+    position: absolute;
+    display: inline-block;
+    height:23px;
+    width:26px;
+    background:url('1/images/player.png')  no-repeat 0 -143px;
+    left:-30px;
+    top:0;
+}
+.playerVoice .mute{
+    background-position:0 -181px;
+}
+.songMessage span:nth-child(1){
+    float:left;
+}
+.songMessage span:nth-child(1):hover{
+    color:rgba(255,255,255,1);
+}
+.songMessage span:nth-child(2){
+    float:right;
+}
+
+.songIntroduce .songMessage{
+    width:1050px;
+    height:20px;
+    color:rgba(255,255,255,0.5);
+}
+.songIntroduce .progressBar{
+    width:1050px;
+    height:13px;
+    position:relative;
+    padding-top:7px
+}
+.progressBar .barBgc{
+    width:1050px;
+    height:4px;
+    background-color:rgba(255,255,255,0.5);
+}
+.barBgc .barRel{
+    width:0px;
+    height:100%;
+    background-color:#fff;
+}
+.progressBar .dot{
+    position:absolute;
+    border-radius:50%;
+    height:11px;
+    width:11px;
+    background-color: #fff;
+    left:0px;
+    top:4px;
+}
+.playerVoice{
+    position:relative;
+}
+.playerVoice .voiceBarBg{
+    width:100px;
+    height:4px;
+    background-color:rgba(255,255,255,0.5);
+    margin:48px 0 0 0;
+}
+.voiceBarBg .voiceBar{
+    width:50px;
+    height:100%;
+    background-color:#fff;
+}
+.playerVoice .voice_dot{
+    position:absolute;
+    left:50px;
+    top:45px;
+    border-radius:50%;
+    height:11px;
+    width:11px;
+    background-color: #fff;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<p>你爱好的运动是</p>
+
+<form  method="get">
+    <input type="checkbox" name="checkall" value="all" />全选
+    <br />
+    <br />
+    <br />
+    <input type="checkbox" name="items" value="足球" />足球
+    <input type="checkbox" name="items" value="篮球" />篮球
+    <input type="checkbox" name="items" value="羽毛球" />羽毛球
+    <input type="checkbox" name="items" value="乒乓球" />乒乓球
+    <br />
+    <button id="btn1" type="button">全选</button>
+    <button id="btn2" type="button">全不选</button>
+    <button id="btn3" type="button">反选</button>
+<!--  type的值默认为submit了 草  -->
+</form>
+</body>
+
+<script type="text/javascript">
+    window.onload = function(){
+        var choose_all = document.getElementById("btn1");
+        var choose_no = document.getElementById("btn2");
+        var choose_rest = document.getElementById("btn3");
+        var items = document.getElementsByName("items");
+        var checkall = document.getElementsByName("checkall");
+
+        choose_all.onclick = function(){
+            for (var i=0;i<items.length;i++){
+                items[i].checked=true;
+            }
+            checkall[0].checked = true;
+        };
+        choose_no.onclick = function(){
+            for (var i=0;i<items.length;i++){
+                items[i].checked=false;
+            }
+            checkall[0].checked = false;
+        };
+        choose_rest.onclick = function(){
+            for (var i=0;i<items.length;i++){
+                items[i].checked=!items[i].checked;
+            }
+            if(items[0].checked&&items[1].checked&&items[2].checked&&items[3].checked){
+                checkall[0].checked = true;
+            }
+            else{
+                checkall[0].checked = false;
+            }
+        }
+        for(var i=0;i<items.length;i++){
+
+            items[i].onclick = function(){
+               if(items[0].checked&&items[1].checked&&items[2].checked&&items[3].checked){
+                   checkall[0].checked = true;
+               }
+                else{
+                   checkall[0].checked = false;
+               }
+                }
+        }
+        checkall[0].onclick = function(){
+            for (var i=0;i<items.length;i++){
+                items[i].checked=checkall[0].checked;
+            }
+        }
+    };
+
+</script>
+</html>

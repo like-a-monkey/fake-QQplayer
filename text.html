@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>textarrtribute1</title>
+    <style type="text/css">
+        p{
+            text-decoration:line-through
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var lis = document.getElementsByTagName("li");
+            for (var i=0;i<lis.length;i++){
+                (function(i){
+                    lis[i].onclick = function(){
+                        console.log(i);
+                    }
+                })(i);
+            }
+        }
+    </script>
+</head>
+<body>
+<del>删除线演示</del>
+<p title="sa54da654d">运用text-decoration来演示</p>
+<ul>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+</ul>
+</body>
+</html>

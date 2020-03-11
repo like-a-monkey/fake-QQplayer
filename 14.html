@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                $('ul').append('<li class="sign">新增的li</li>');
+            });
+
+            // $('ul').click(function(event){
+            //   alert(this.innerHTML);//单纯使用this时是html对象
+            //   alert($(this).html());//$(this)是jquery对象 此时依然是ul的jq对象
+            //     if(event.target.className=='sign'){
+            //    alert(event.target.innerHTML);} //以往的委托还需要额外增加一个类来区分ul 和 li
+            // });
+            $('ul').delegate("li",'click',function(){
+                alert($(this).html());//$(this)是jquery对象 $(this)此处相当于target
+                //且只有li触发有效 若是ul的空白区域的无法触发
+            });
+        });
+    </script>
+</head>
+<body>
+<button>增加</button>
+<ul>
+    <li class="sign">第1个li</li>
+    <li class="sign">第2个li</li>
+    <li class="sign">第3个li</li>
+</ul>
+
+</body>
+</html>

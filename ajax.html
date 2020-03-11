@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>r
+    <meta charset="UTF-8">
+    <title>ajax练习</title>
+</head>
+<style type="text/css">
+    .outer{
+        height:450px;
+        width:450px;
+        background-color: #bfa;
+        margin:100px auto;
+        text-align: center;
+    }
+    .inner{
+        height:300px;
+        width:300px;
+        background-color:deeppink;
+        margin:50px auto;
+    }
+    img{
+        height:300px;
+        width:300px;
+    }
+    button{
+        height:30px;
+        width:70px;
+    }
+</style>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function(){
+            var $this = this;
+            $.ajax({
+                url:'test1.php',
+                type:'get',
+                data:{
+                    name:$this.getAttribute('name')
+                },
+                success:function(resData){
+                    console.log(resData);
+                },
+                error:function(res){
+                    console.log(res.status);
+                },
+                timeout:3000,
+
+            })
+        };
+        btns[1].onclick = function(){
+            var $this = this;
+            $.ajax({
+                url:'test1.php',
+                type:'get',
+                data:{
+                    name:$this.getAttribute('name')
+                },
+                success:function(resData){
+
+                },
+                error:function(res){
+
+                },
+                timeout:3000,
+
+            })
+        };
+        btns[2].onclick = function(){
+            var $this = this;
+            $.ajax({
+                url:'test1.php',
+                type:'get',
+                data:{
+                    name:$this.getAttribute('name')
+                },
+                success:function(resData){
+
+                },
+                error:function(res){
+
+                },
+                timeout:3000,
+
+            })
+        };
+
+    };
+
+</script>
+<body>
+<div class="outer">
+    <table></table>
+    <div class="inner">
+        <img src="" alt="">
+    </div>
+    <button name="nz">女装</button>
+    <button name="bb">包包</button>
+    <button name="tx">拖鞋</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟</title>
+    <style type="text/css">
+        /*为span的兄弟元素后的第一个元素，且必须为p添加表现 +选择后面第一个*/
+    span + p{
+        background-color:blue;
+    }
+        /* ~ 表示选择span后的兄弟元素，且为p元素 */
+        span ~ p{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<p>这是一个p标签</p>
+<p>这是一个p标签</p>
+<p>这是一个p标签</p>
+<p>这是一个p标签</p>
+<span>这是一个span标签</span>
+<!--<a>这是一个a标签</a>-->
+<p>这是一个p标签</p>
+<p>这是一个p标签</p>
+<p>这是一个p标签</p>
+</body>
+</html>

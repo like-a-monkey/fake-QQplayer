@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height:100px;
+            width:100px;
+            border:1px solid black;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function(){
+         $('div').html('<p>我是一个p<span>我是一个span</span></p>');
+        };//类似innerhtml
+        btns[1].onclick = function(){
+            console.log($('div').html());
+        };
+        btns[2].onclick = function(){
+            $('div').text('<p>我是一个p<span>我是一个span</span></p>');
+        };//类似innertext
+        btns[3].onclick = function(){
+            console.log($('div').text());
+        };
+        btns[4].onclick = function(){
+            $('input').val('plz input something')
+        };//设置value值
+        btns[5].onclick = function(){
+            console.log($('input').val());
+        };
+        });
+    </script>
+</head>
+<body>
+<button>设置HTML</button>
+<button>获取HTML</button>
+<button>设置文本</button>
+<button>获取文本</button>
+<button>设置value</button>
+<button>获取value</button>
+<div class="box">
+</div>
+<input type="text">
+</body>
+</html>

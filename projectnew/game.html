@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>狂拍灰太狼</title>
+    <script src="../../../BaiduNetdiskDownload/跟着江哥从零狂虐jQuery+Ajax/00-代码资料--代码资料--代码资料--都在这里面/jQuery/jQuery基础/56-狂拍灰太狼/js/jquery-1.12.4.js"></script>
+</head>
+<script src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var index;
+        var limitIndex;
+        var timer;
+        var wolf_h=['h0.png','h1.png','h2.png','h3.png','h4.png','h5.png','h6.png','h7.png','h8.png','h9.png'];
+        var wolf_x=['x0.png','x1.png','x2.png','x3.png','x4.png','x5.png','x6.png','x7.png','x8.png','x9.png'];
+        var place = [
+            {left:"100px",top:"115px"},
+            {left:"20px",top:"160px"},
+            {left:"190px",top:"142px"},
+            {left:"105px",top:"193px"},
+            {left:"19px",top:"221px"},
+            {left:"202px",top:"212px"},
+            {left:"120px",top:"275px"},
+            {left:"30px",top:"295px"},
+            {left:"209px",top:"297px"}
+        ];
+        $('.start').click(function(){
+            $(this).detach();
+            progress();
+            $('.restart button').click(function(){
+                $('.content h1').text(0);
+                $('.restart').stop();
+                $('.restart').fadeOut(500);
+                $('.time').css({
+                    width:180
+                })
+                progress();
+            });
+        });
+        $('.rule').click(function(){
+            $('.rules').stop();
+            $('.rules').fadeIn(500);
+            $('.rules span').click(function(){
+                $('.rules').fadeOut(500);
+            })
+        });
+        function restart(){
+            $('.restart').stop();
+            $('.restart').fadeIn(500);
+            clearInterval(timer);
+            $('.content img').remove();
+
+        };
+        function progress(){
+            $('.time').stop();
+            $('.time').animate({
+                width:0
+            },60000,'linear',function(){
+                restart();
+            });
+            startWolf();
+        }
+        function startWolf(){
+            var pchoose = Math.round(Math.random()*8);
+            var tchoose = Math.round(Math.random());
+            var wolf_type= tchoose === 0? wolf_h:wolf_x;
+            $wolfImg = $('<img src="">');
+            $('.content').append($wolfImg);
+            index = 0;
+            limitIndex = 5;
+            timer=setInterval(function(){
+                $wolfImg.attr('src',wolf_type[index]);
+                index++;
+                if(index>limitIndex){
+                    $wolfImg.remove();
+                    clearInterval(timer);
+                    startWolf();
+                    limitIndex = 5;
+                }
+
+            },180);
+            $wolfImg.css({
+                position:'absolute',
+                left:place[pchoose].left,
+                top:place[pchoose].top
+            });
+            gameRule($wolfImg);
+        }
+        function gameRule($wolfImg){
+            $wolfImg.one('click',function(){
+                limitIndex = 9;
+                index = 5;
+                if($wolfImg.attr('src').indexOf("h")>=0){
+                    $('.content h1').text(parseInt($('.content h1').text())+10);
+                }
+                else{
+                    $('.content h1').text(parseInt($('.content h1').text())-10);
+                }
+            })
+        }
+    });
+</script>
+<link rel="stylesheet" href="game.css">
+
+<body>
+<div class="content">
+<h1>0</h1>
+    <div class="time"></div>
+    <button class="start">开始游戏</button>
+    <div class="rule">游戏规则</div>
+    <div class="rules">
+        <p>限时60s</p>
+        <p>打到灰太狼累计+10分</p>
+        <p>打到小灰灰则-10分</p>
+        <span>[关闭]</span>
+    </div>
+    <div class="restart">
+        <p>game over</p>
+       <button>重新开始</button>
+    </div>
+</div>
+</body>
+</html>

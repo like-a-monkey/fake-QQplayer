@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>\
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).scroll(function(res){
+                var offse = $('html,body').scrollTop();
+                if(offse>=1500){
+                    $('div').show(500);
+                }
+                else{
+                    $('div').hide(500);
+                }
+            }) ;
+        });
+
+    </script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        html{
+            height:5000px;
+        }
+        .left{
+            height:300px;
+            width:125px;
+            background-color: #bfa;
+            float:left;
+            position:fixed;
+            left:0;
+            top:500px;
+            display:none;
+        }
+        .right{
+            height:300px;
+            width:125px;
+            background-color:red;
+            float:right;
+            position:fixed;
+            left:1778px;
+            top:500px;
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="left"></div>
+<div class="right"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+        //$('div').css("backgroundColor","red");逐个设置
+        //$('div').css("backgroundColor","blue") .css("width","200px").css("height","200px");
+          //链式设置 可读性不高 不要连续超过三个最好
+          $('div').css({
+              backgroundColor:"#bfa",
+              width:"200px",
+              height:"200px"//与css修饰器不同
+              //不能带- 属性值要加""  属性用逗号分隔 因为传入的是对象
+              //依然是设置在内联样式中 优先级很高
+          })
+
+        });
+
+    </script>
+    <style type="text/css">
+        div{
+            height:100px;
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

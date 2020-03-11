@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        //相当于 document.onload = function(){};
+        $(document).ready(function(){
+            //alert(1);
+        });
+        jQuery(document).ready(function(){
+            //alert(2);
+        });
+        $(function(){
+            //alert(3);
+            //console.log($('div').text());
+            var $input = $('input');
+            $input.each(function(index,ele){
+                console.log(ele['checked']);
+                ele['aaa']=123;
+                //prop原理通过ele['aaa']=123;类似的给属性赋值
+
+            });
+
+            var btn = document.getElementsByTagName('button')[0];
+            btn.onclick =function(){
+                for(var i = 0;i<$input.length;i++){
+                    console.log($input.eq(i).prop('checked'));
+                }
+                $input.each(function(index,ele){
+                    console.log(ele.checked);;
+                });
+
+            };
+
+        });
+        jQuery(function(){
+            //alert(4);
+        });
+        //可以编写多个不会覆盖
+        //四种入口函数
+    </script>
+</head>
+<body>
+<img src="https://img.alicdn.com/bao/uploaded/i3/TB17fLDFVXXXXbAXXXXXXXXXXXX_!!0-item_pic.jpg_180x180q90.jpg_.webp" alt="" />
+<!--<div class="box1">这是box1-->
+<!--    <div class="box2">这是box2-->
+<!--        <p>这是p标签</p>-->
+<!--    </div>-->
+<!--</div>-->
+<input type="checkbox">choose 1
+<input type="checkbox">choose 2
+<input type="checkbox">choose 3
+<input type="checkbox">choose 4
+<button>获取checked</button>
+</body>
+</html>

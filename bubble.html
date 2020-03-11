@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function(){
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML = "<a href=\"javascript:;\" class=\"link\">新增超链接</a>";
+            var ul = document.getElementsByTagName("ul")[0];
+            ul.appendChild(li);
+        };
+        //     var lis = document.getElementsByTagName("li");
+        // for(var i=0;i<lis.length;i++){
+        //     lis[i].onclick = function(){
+        //         alert("点击了超链接");
+        //     };
+        // }
+            //如果单纯这样绑定点击响应函数 那么新创建出来的超链接则没有
+            //绑定响应函数  要让新的超链接也具有响应函数的功能我们需要利用时间的冒泡
+            //事件的向上传导，当后代元素上的事件被触发时，祖先元素的相同事件也会被触发
+            //故而我们只需要给他们共同的祖先元素绑定一个onclick响应函数即可
+            var ul = document.getElementsByTagName("ul")[0];
+            ul.onclick = function(event){
+               //由于this 指向的对象是ul
+               //我们需要精确定位触发事件的对象即a，而不是包括li所占的空位
+               //我们需要调用event.target 这个指向的则是触发事件的实际对象
+                if(event.target.className =="link"){
+                    alert("超链接触发了");
+                }
+
+            };
+
+        };
+    </script>
+</head>
+<body>
+<button id="btn">创建一个新的超链接</button>
+<ul>
+    <li><a href="javascript:;" class="link">超链接</a></li>
+    <li><a href="javascript:;" class="link">超链接</a></li>
+    <li><a href="javascript:;" class="link">超链接</a></li>
+    <li><a href="javascript:;" class="link">超链接</a></li>
+
+</ul>
+</body>
+</html>

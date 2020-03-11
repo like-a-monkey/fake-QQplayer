@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<style type="text/css">
+    .container{
+        height:300px;
+        width:400px;
+        border:1px solid red;
+        display:flex;
+    }
+
+    .inner{
+        border:1px solid black;
+        flex:1;
+    }
+
+</style>
+    <script type="text/javascript">
+        window.onload= function(){
+
+            var btn = document.getElementsByTagName('button')[0];
+            btn.onclick = function(){
+                var xhr = new XMLHttpRequest();
+                console.log('withCredentials' in xhr);
+                xhr.open('get', 'http://baidu.com', true);
+                xhr.setRequestHeader('X-Custom-Header', 'value');
+                xhr.send();
+            };
+        };
+
+    </script>
+    <script src="tools.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="inner">我是左侧item</div>
+    <div class="inner">我是右侧的item,我的内容比较多</div>
+</div>
+<button>请求</button>
+
+</body>
+</html>

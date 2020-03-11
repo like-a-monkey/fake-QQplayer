@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            var inner = $('.inner');//$('.inner').offset()返回一个对象 封装这left top即水平 垂直距离
+            console.log(inner.offset());//offs.left offs.top
+            // inner.offset({
+            //     left:10,
+            //     top:10 //与js原生中的offsetleft offsettop不同 这里能修改
+            // })
+            //console.log(inner.width());//获取宽度不包括边框
+            //console.log(inner.height());//获取高度不包括边框
+            //inner.height('500px');//可以直接对宽高进行修改 内容区
+            //inner.height(500);//同上
+            // inner.height(function(n,c){
+            //     return c+10;
+            // });
+            //以 10 像素的幅度增加 p 元素的高度
+            //设定CSS中 'height' 的值，可以是字符串或者数字，
+            // 还可以是一个函数，返回要设置的数值。
+            // 函数接受两个参数，第一个参数是元素在原先集合中的索引位置，第二个参数为原先的高度。
+            // console.log(inner.innerHeight());//包括padding
+            // console.log(inner.innerWidth());
+            //console.log(inner.outerHeight());//包括padding 边框
+            //console.log(inner.outerHeight(true));//包括padding 边框 输入true则计算外边距
+            // console.log(inner.position());//返回的对象包含两个整型属性：top 和 left。
+            // inner.css({
+            //     left:'0px',
+            //     top:'0px'
+            // })
+            //只能查看所以需要css来修改
+        });
+    </script>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .outer{
+            width:300px;
+            height:250px;
+            padding-top:50px;
+            background-color:#bfa;
+            position:relative;
+        }
+        .inner{
+            height:100px;
+            width:100px;
+            background-color:red;
+            border:50px solid black;
+            margin-left:50px;
+            position:absolute;
+            /*margin:50px;*/
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+    <div class="inner"></div>
+</div>
+</body>
+</html>

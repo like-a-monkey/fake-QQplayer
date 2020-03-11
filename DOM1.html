@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于for循环中来定义响应函数</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var ahref = document.getElementsByTagName("a");
+            for (var i=0;i<ahref.length;i++){
+                ahref[i].onclick = function(){
+                    //移除对应父元素下的span子元素
+                    alert(ahref[i]);
+                    //显示undefined 因为此处循环已经完毕
+                    //i=3 i超出length 故而undefined
+                    //造成这样的原因是因为for循环在一上来的时候就已经循环完毕
+                    //而响应函数还没有触发  当响应函数触发时i已经为三无法使用了
+                    //使用this才能解决这种问题
+                    //this.parentNode.removeChild(this.previousSibling);
+                    ahref[i].parentNode.removeChild(this.previousSibling);
+                }
+            }
+
+        };
+    </script>
+</head>
+<body>
+<!--取消超链接的跳转动作--><div>
+<p><span>content1   </span><a href="javascript: ;">delete1</a><br /></p>
+<p><span>content2   </span><a href="javascript: ;">delete2</a><br /></p>
+<p><span>content3   </span><a href="javascript: ;">delete3</a><br /></p>
+<p><span>content4   </span><a href="javascript: ;">delete4</a><br /></p>
+<p><span>content5   </span><a href="javascript: ;">delete5</a><br /></p>
+</div>
+
+</body>
+
+</html>

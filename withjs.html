@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="hh">点我一下</button>
+</body>
+<script type="text/javascript">
+
+
+    //浏览器在加载页面时是自上到下的方式来加载的 所以如果script标签写在上面的时候
+    //容易获取不到元素对象导致报错
+    //最好还是写在下面 提升性能（不用加载完成才运行）
+var btn = document.getElementById("hh");
+btn.onclick = function(){
+    alert("点击成功");
+}
+
+
+</script>
+</html>

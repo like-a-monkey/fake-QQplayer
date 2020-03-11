@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接</title>
+    <style type="text/css">
+        /* 给鼠标长单击滑动选中的文字来添加表现 */
+        p::selection{
+            color:red
+        }
+        /* 获取焦点，即选中文本框时的操作 */
+        input:focus{
+            background:red
+        }
+        a:link{
+            color: blue
+        }
+        /*伪类 visited 只能设置颜色，涉及到隐私问题 */
+        a:visited{
+            color: green
+        }
+        /* 鼠标悬浮至链接上时 */
+        a:hover{
+            font-size:10px
+        }
+        /* 链接被点击的状态 */
+        a:active{
+            font-size:25px
+        }
+        /* hover active 也可以为其他元素来设置不一定需要给a设置
+        !!!!!!注意顺序  由于优先级四个相同，如果将link visited放到hover及active下方时，hover及active无法
+        正常显示  正确顺序 应该为上方所示*/
+        a[href]{
+            color:black
+        }
+    </style>
+</head>
+<body>
+<a href="http://www.baidu.com" >这是一个点击过的超链接</a><br/>
+<a href="http://www.baidu123456.com" >这是一个未知的超链接</a>
+<hr/>
+<input type="text" >
+<p>这是一个p标签 这是一个p标签</p>
+</body>
+</html>

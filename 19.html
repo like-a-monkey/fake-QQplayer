@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    div{
+        width:1000px;
+        height:350px;
+        margin:200px auto;
+        position:relative;
+        border:5px solid #bfa;
+        overflow: hidden;
+        background-color: black;
+    }
+    ul{
+        list-style: none;
+        width:3000px;
+        height:350px;
+        position:absolute;
+        left:0;
+        top:0;
+
+    }
+    ul li{
+        float:left;
+    }
+
+</style>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var timer;
+        function autoplay(){
+        timer=setInterval(function(){
+           $('ul').animate({
+               left:"+=-10"
+           },50,function(){
+               $('ul').css({
+                   left:$('ul').position().left % (-2000)
+               });
+           })
+       },50);
+    }
+        autoplay();
+        $('li').hover(function(){
+            clearInterval(timer);
+            $(this).fadeTo(0,1);
+            $(this).siblings().fadeTo(0,0.5);
+        },function(){
+            $('li').fadeTo(0,1);
+            autoplay();
+        });
+
+
+    });
+
+</script>
+<body>
+<div class="outer">
+    <ul class="autoplay">
+        <li><img src="images/s1.png" alt=""></li>
+        <li><img src="images/s2.png" alt=""></li>
+        <li><img src="images/s3.png" alt=""></li>
+        <li><img src="images/s4.png" alt=""></li>
+        <li><img src="images/s1.png" alt=""></li>
+        <li><img src="images/s2.png" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

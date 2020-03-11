@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="1" type="checkbox" value="1" >1 <br>
+<input id="2" type="checkbox" value="2" checked>2 <br>
+<input id="3"  type="checkbox" value="3" >3 <br>
+<input id="4" type="text" value="just for test">
+<button>按钮</button>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+   $(function(){
+     const check = document.getElementById('2')
+
+     const cheBox1 = $('#1')
+     const cheBox2 = $('#2')
+     const cheBox3 = $('#3')
+     const input = $('#4')
+     $('button').click(function() {
+       cheBox1.prop('checked', true)
+       // console.log(input.attr('value'))
+       console.log(cheBox3                 .attr('checked'))
+
+       input.prop('value', 123)
+       // console.log(input.attr('value'))
+
+
+     })
+   })
+
+</script>
+</body>
+</html>

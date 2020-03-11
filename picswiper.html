@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #box1{
+            width:100px;
+            height:100px;
+            background-color:red;
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box1 = document.getElementById("box1");
+            var dir = 0;
+            var speed = 20;
+            function move(){
+                //先设置一个函数来让方块不断地匀速运动 避免从键盘键入时会卡顿一下
+                //然后我们在调整方向 当我们keyup的时候在将方向设置为0让分支无法执行
+                //按住ctrl时可以在调整速度 松开时在换回原来的速度
+                switch(dir){
+                    case 37:
+                        box1.style.left = box1.offsetLeft-speed + "px";
+                        break;
+
+                    case 38:
+                        box1.style.top = box1.offsetTop-speed + "px";
+                        break;
+
+                    case 39:
+                        box1.style.left = box1.offsetLeft+speed + "px";
+                        break;
+
+                    case 40:
+                        box1.style.top = box1.offsetTop+speed + "px";
+                        break;
+                }
+
+            }
+            setInterval(move,30);
+            document.onkeydown = function(event){
+                dir=event.keyCode;
+                if(event.ctrlKey){
+                    speed=50;
+                }
+                else{
+                    speed=20;
+                }
+
+            }
+            document.onkeyup = function(){
+                dir=0;
+            }
+
+        };
+    </script>
+</head>
+<body>
+<div id="box1"></div>
+</body>
+</html>

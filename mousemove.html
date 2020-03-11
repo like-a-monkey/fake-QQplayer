@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div鼠标移动而移动</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+       #mousediv{
+            height:30px;
+            width:30px;
+            background-color:#bfa;
+            position:absolute;
+        }
+        body{
+            height:5000px;
+        }
+
+    </style>
+    <script type="text/javascript">
+         window.onload = function(){
+             var div = document.getElementById("mousediv");
+
+            document.onmousemove = function(event){
+                var sp = document.body.scrollTop || document.documentElement.scrollTop;
+                //chrome似乎现在也改为document.documentElement.scrollTop了
+                //需要将sp写进这个响应函数中 这样才可以时刻获取滚动条的滚动进度
+                div.style.left = event.clientX+"px";
+                div.style.top = (event.clientY+sp)+"px";
+            };
+
+
+         };
+
+    </script>
+</head>
+<body>
+<div id="mousediv"></div>
+</body>
+</html>

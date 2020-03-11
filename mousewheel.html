@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滚轮事件</title>
+    <style type="text/css">
+        #box1{
+            height:200px;
+            width:200px;
+            background-color:red;
+        }
+        body{
+            height:5000px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            //onmousewheel鼠标滚动事件 火狐不能使用 需要使用DOMMouseScroll来绑定
+            //需要addEventListener来绑定
+            box1.onmousewheel = function(event){
+                // alert(event.wheelDelta);wheelDelta判断滚动方向 向下-120 向上120
+                if(event.wheelDelta<0){
+                    box1.style.height = box1.clientHeight+10+"px";
+                }
+                else{
+                    box1.style.height = box1.clientHeight-10+"px";
+                }
+                return false;
+                //取消浏览器默认滚动行为
+                //使用addEventListener绑定的响应函数无法通过return false来取消默认行为
+                //使用event.preventDefault()来取消
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="box1">
+
+</div>
+</body>
+</html>

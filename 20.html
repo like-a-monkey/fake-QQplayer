@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+        $(function(){
+            var $div;
+            var $li = $('<li>add new li</li>');
+            $('button').eq(0).click(function(){
+
+                //$div = $('div').remove();//会把删除的元素返回 以便后面使用
+                //但除了这个元素本身得以保留之外，其他的比如绑定的事件，附加的数据等都会被移除。
+                //$div = $('div').detach();
+                //与remove()不同的是，所有绑定的事件、附加的数据等都会保留下来。
+                //$('div').empty();
+                //把所有段落的子元素（包括文本节点）删除
+                //$div = $('li').replaceWith($li); //返回被替换的那些li
+                //$li.replaceAll('li');
+                //替换所有节点为指定节点 写法不同而已
+
+            });
+            $('li').click(function(){
+                alert($(this).html());
+            });
+            $('button').eq(1).click(function(){
+                $div.appendTo('ul');
+            });
+            $('button').eq(2).click(function(){
+                var $firli = $('li:first').clone();
+                //默认为false
+                $firli.appendTo('ul');
+                //此时点击不会警告 事件没有被复制
+            });
+            $('button').eq(3).click(function(){
+                var $firli = $('li:first').clone(true);
+                $firli.appendTo('ul');
+                //此时点击警告 事件被复制
+                //深复制时绑定的事件都会被复制
+            });
+
+        });
+
+</script>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>浅复制</button>
+<button>深复制</button>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+</ul>
+<div >
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <p>这是一个p标签</p>
+    <span>这是一个span标签</span>
+</div>
+</body>
+</html>

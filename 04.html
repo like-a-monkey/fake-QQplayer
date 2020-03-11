@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function(){
+        // nameString
+        // 属性名称
+        //
+        // propertiesMap
+        // 作为属性的“名/值对”对象
+        //
+        // key,valueString,Object
+        // 属性名称，属性值
+        //
+        // key,function(index, attr)String,Function
+        //1:属性名称。
+        //2:返回属性值的函数,第一个参数为当前元素的索引值，第二个参数为原先的属性值。
+
+
+
+        // console.log($("img").attr("src"));
+        // console.log($("img").prop("src"));//返回第一个选中dom的对应的属性值
+        console.log($("img").attr("alt", 'pic'));
+        console.log($("img").prop("alt", 'pic'));
+        //console.log($("img").prop("alt", 'pic') === $("img").prop("alt", 'pic'));//false
+        console.log($("img").prop("self-prop", 'pict'));//自定义属性不会出现在element页面中
+        //只能在js对象中查看属性 即对属性进行操作属性节点在attribute中
+        //console.log($("img").attr("self-prop"));//自定义属性不会出现在element页面
+        //故而无法通过attr来获取其值
+        //console.log($("img").prop("self-prop"));//通过prop来获取其值
+        console.log($("img").attr("self-attr", 'picture'));//自定义属性会出现在element页面中
+        // 即对属性节点进行操作
+        //官方推荐在操作属性节点时具有true 和 false两个值的属性节点 如 checked selected disabled
+        //使用prop() 其他使用attr();
+        console.log($("input").attr("checked"));//undefinded
+        console.log($("input").prop("checked"));//false
+
+    });
+
+</script>
+<body>
+<p class="text"></p>
+<img class='images' src="https://i0.hdslb.com/bfs/archive/a4fd6ae153794ca731b281442b6586f3df1ed7b3.jpg@80w_50h.webp" alt="">
+<img src="https://i0.hdslb.com/bfs/archive/a4fd6ae153794ca731b281442b6586f3df1ed7b3.jpg@80w_50h.webp" alt="">
+<img src="https://i0.hdslb.com/bfs/archive/491767dcc08e45f7196a505d8e7ccd40dd8ce7a9.jpg@80w_50h.webp" alt="">
+<input type="checkbox">1
+<input type="checkbox">2
+<input type="checkbox">3
+</body>
+</html>

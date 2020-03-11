@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:100px;
+            width:100px;
+            background-color: #bfa;
+        }
+        *{
+            padding:0;
+            margin:0;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('button').eq(0).click(function(){
+                //$('div').animate({width:500},5000).delay(3000).animate({height:500},5000);
+                //变宽后等待三秒再变高
+                $('div').animate({width:500},1000,function(){alert(1);}).animate({height:500},1000,function(){alert(2);}).animate({width:100},1000).animate({height:100},1000);
+            });
+            $('button').eq(1).click(function(){
+                // $('div').stop();
+                // $('div').stop(false);
+                // $('div').stop(false,false);//立即停止当前动画 继续执行后续动画
+
+                // $('div').stop(true);
+                // $('div').stop(true,false);//立即停止所有动画
+
+                // $('div').stop(false,true);//立即完成当前动画，继续执行后续
+
+                //$('div').stop(true,true);//立即完成当前动画，不再执行后续
+                //除非正常完成动画或者gotoEnd为true 才会调用会调函数
+                //(clearQueue,gotoEnd) 清空队列  立即完成
+                $('div').finish();
+                //所有排队的动画的CSS属性跳转到他们的最终值
+                //且调用所有回调函数
+
+            });
+        });
+//同步执行 修改多个属性
+    </script>
+</head>
+<body>
+<button>开始</button>
+<button>stop</button>
+<div></div>
+
+</body>
+</html>

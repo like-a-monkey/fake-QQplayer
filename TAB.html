@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('li').hover(function(){
+            $('li').removeClass('current');
+            //$(this).siblings().removeClass('current');
+            $(this).addClass('current');
+            var index = $(this).index();
+            $('img').removeClass('show');
+            //$('img').eq(index).siblings().removeClass('show');
+            $('img').eq(index).addClass('show');
+        },function(){
+
+        });
+
+    });
+</script>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .tab ul{
+        width:440px;
+        height:50px;
+        border:1px solid black;
+        list-style: none;
+        margin:200px auto 0;
+    }
+    div li{
+        float:left;
+        width:110px;
+        height:50px;
+        background-color:orange;
+        text-align: center;
+        line-height:50px;
+
+    }
+
+    .pic{
+        width:440px;
+        height:350px;
+        border:1px solid black;
+        margin:0 auto;
+        border-top:none;
+    }
+    img{
+        width:440px;
+        height:350px;
+        display:none;
+    }
+    .current{
+        background:pink;
+    }
+    .show{
+        display:block;
+    }
+</style>
+<body>
+<div class="tab">
+    <ul class="nav">
+        <li class="current">风景1</li>
+        <li>风景2</li>
+        <li>风景3</li>
+        <li id="last">风景4</li>
+    </ul>
+    <div class="pic">
+        <img src="images/s1.png" alt="" class="show">
+        <img src="images/s2.png" alt="" >
+        <img src="images/s3.png" alt="" >
+        <img src="images/s4.png" alt="" >
+    </div>
+</div>
+</body>
+</html>

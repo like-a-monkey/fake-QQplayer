@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #pic{
+            margin:50px auto;
+            padding:10px;
+            background-color:grey;
+            text-align:center;
+        }
+        button{
+            margin:20px;
+            width:80px;
+            font:bold 15px "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+<div id="pic">
+    <img src="images/1.gif" alt="">
+    <p><button id="prev">上一张</button><button id="next">下一张</button></p>
+
+</div>
+</body>
+<script type="text/javascript">
+    console.log(123);
+    var btn1 = document.getElementById("prev");
+    var btn2 = document.getElementById("next");
+    var img = document.getElementsByTagName("img");
+    var srcc = ["images/1.gif","images/1.jpeg","images/2.gif","images/2.jpeg","images/pl.png"];
+    var i = 0;
+
+    btn2.onclick = function(){
+        i++;
+        if (i > srcc.length-1){
+            i = 0;}
+        img[0].src=srcc[i];
+
+    };
+    btn1.onclick = function(){
+        i--;
+        if (i < 0){
+            i = srcc.length-1;}
+        img[0].src=srcc[i];
+    };
+</script>
+</html>

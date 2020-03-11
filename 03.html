@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function(){
+     var res = $('p').eq(1).attr('class');
+     console.log(res);
+        });
+    </script>
+    <style type="text/css">
+        p:only-of-type{
+            font:50px "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p class="pbiao">p</p>
+    <p class="pqian">p</p>
+    <span>span</span>
+</div>
+</body>
+</html>

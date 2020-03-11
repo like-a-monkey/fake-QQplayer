@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础图片轮播器</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box1{
+            width:500px;
+            height:350px;
+            margin:150px  auto;
+            border:20px solid #bfa;
+            position:relative;
+            overflow:hidden;
+
+        }
+        #pic_list{
+            width:2600px;
+            list-style:none;
+            position:absolute;
+            background-color: #bfa;
+            /*left:-520px; 一张图片就移动-520px;*/
+        }
+        #pic_list li{
+            float:left;
+            padding-right:20px;
+        }
+        #clicker{
+            position:absolute;
+            left:0;
+            top:335px;
+            float:left;
+            list-style:none;
+
+        }
+        #clicker li{
+            float:left;
+            margin-right:5px;
+            
+        }
+        a{
+            display:block;
+            width:15px;
+            height:15px;
+            background-color:gray;
+            opacity:0.5;
+        }
+        a:hover{
+            background-color:black;
+        }
+    </style>
+    <script type="text/javascript" src="tools.js">
+    </script>
+</head>
+<body>
+<div id="box1">
+    <ul id="pic_list">
+        <li class="li"><img src="images/s1.png" alt=""></li>
+        <li class="li"><img src="images/s2.png" alt=""></li>
+        <li class="li"><img src="images/s3.png" alt=""></li>
+        <li class="li"><img src="images/s4.png" alt=""></li>
+        <li class="li"><img src="images/s5.png" alt=""></li>
+        <li class="li"><img src="images/s1.png" alt=""></li>
+    </ul>
+    <ul id="clicker">
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+    </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+    window.onload = function(){
+        var ul = document.getElementById("pic_list");
+        var ul2 = document.getElementById("clicker");
+        var li = document.getElementsByClassName("li");
+        var lis = document.getElementsByTagName("a");
+        ul2.style.left = (500-lis.length*20)/2 +"px";
+        //自适应悬浮框个数居中
+        ul.style.width = li.length*520 + "px";
+        //自动设置ul元素宽度以适应新加入的图片
+        var timer=setInterval(fun,2000);
+        //设置图片轮播
+        var index = 0;
+        lis[index].style.backgroundColor="black";
+        function fun(){
+            index++;
+            move(ul,30,-520*index,"left",function(){
+                //图片索引为li.length-1时，自动将索引归零且将left设回0
+                if(index==li.length-1){
+                    index = 0;
+                    ul.style.left = "0px";
+                }
+                setA();
+                                        });
+            for(var i=0;i<lis.length;i++){
+                lis[i].index = i;//储存索引方便切换图片
+                lis[i].onclick = function(){
+                    clearInterval(timer);
+                    index=this.index;
+                    move(ul,30,-520*index,"left",function(){timer=setInterval(fun,2000);});
+                    //利用回调函数再次开启定时器
+                    setA();
+                };
+            }
+        }
+        //完成自动循环功能是 原理是插入六幅图片第六幅跟第一幅一样 在播放至第六幅图片
+        // 时，瞬间将left归零 视觉上无明显变化 但却将图组回到开头
+
+        function setA(){
+            for(var i=0;i<lis.length;i++){
+                lis[i].style.backgroundColor="";
+                lis[index].style.backgroundColor="black";
+            }
+        }
+    };//设置悬浮框颜色 若直接设置灰色会由于优先度问题导致hover效果无法显示
+    //当设置的是空串的时候 会默认取css修饰
+
+</script>

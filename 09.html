@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scrollTop</title>
+</head>
+<style type="text/css">
+.scrollTop{
+    height:250px;
+    width:150px;
+    border:1px solid black;
+    overflow:auto;
+}
+</style>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function(){
+       var btns = document.getElementsByTagName('button');
+       // btns[0].onclick = function(){
+       //     console.log($('.scrollTop').scrollTop());
+       // };
+       //  btns[1].onclick = function(){
+       //      $('.scrollTop').scrollTop(300);
+       //  };
+        btns[0].onclick = function(){
+            console.log($('body').scrollTop()+$('html').scrollTop());
+            //ie 认为网页滚轮是属于body的其他的认为是html的
+        };
+         btns[1].onclick = function(){
+             $('body,html').scrollTop(300);//兼容ie
+         };
+    });
+</script>
+<body>
+<div class="scrollTop">我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我
+    我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我
+    我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我我是一个div 请仔细阅读我
+</div>
+<button>获取</button>
+<button>设置</button>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</body>
+</html>

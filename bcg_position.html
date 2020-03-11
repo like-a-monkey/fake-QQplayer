@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景图片设置</title>
+
+    <style type="text/css">
+        /*如果background-position单单只有一个值 默认将另一个设置为center 像素输入也一样*/
+        .bcg{
+            width:1000px;
+            height:600px;
+            background-color:#bfa;
+            background-image:url(images/5.jpg);
+            margin:30px auto;
+            background-repeat:no-repeat;
+            background-position:300px ;
+        }
+
+        body{
+            height:5000px;
+            background-image:url(images/4.jpg);
+            background-attachment:fixed;
+            background-repeat:no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="bcg"></div>
+
+</body>
+</html>

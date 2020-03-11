@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>deepCopy</title>
+    <script type="text/javascript">
+        var oldobj = {
+            a:123,
+            b:'stringtype',
+            c:{
+                a:'another obj',
+                b:[{a:'third',b:'seecanitwork'},123,456]
+            },
+            d:['arr',2]
+        };
+        //浅拷贝
+        // var newobj = {};
+        // for(var k in oldobj){
+        //     newobj[k] = oldobj[k];
+        // }
+        // console.log(newobj);
+        // oldobj.c.a = 'i change';
+        // console.log(newobj.c.a);
+        //此时只要修改oldobj的对象属性  newobj上依然会发生改变
+
+
+        //深拷贝 利用递归函数来实现 无论你嵌套了多少层依然会被copy
+        //就是把原本的内存上的内容拷贝了一遍然后重新放到另一块被指定好的内存
+        function deepCopy(newobj,oldobj){
+            for(var k in oldobj){
+                //首先判断k属性名对应的属性的类型是否为array 或者 object
+                //如果是则要进行深拷贝
+                var item = oldobj[k];
+                if(item instanceof  Array){//如果oldobj[k]为array
+                    //这里Array也属于Object 所以需要优先判断是否为数组
+                     newobj[k] = [];//为newobj中的同名属性开辟一块新的内存存放数组
+                    deepCopy(newobj[k],item);//调用递归
+                }
+                else if(item instanceof Object){//如果oldobj[k]为object
+                     newobj[k] = {};//为newobj中的同名属性开辟一块新的内存存放数组
+                    deepCopy(newobj[k],item);//调用递归
+                }
+                else{//普通元素
+                    newobj[k] = item;
+                }
+
+            }
+        }
+        var newobj = {};
+        deepCopy(newobj,oldobj);
+        console.log(newobj);
+        oldobj.c.b[0].b = 'i change';
+        console.log(newobj.c.b[0].b);//seecanitwork成功深拷贝
+    </script>
+</head>
+<body>
+
+</body>
+</html>

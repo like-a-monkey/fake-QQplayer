@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体</title>
+    <style type="text/css">
+        /* 风格 加粗 大小写 顺序无所谓也可以空缺 但是最后两个必须是字体大小 字体,字体必须是最后一个.
+        字体大小必须在倒数第二位,且可以设置行高如下 */
+        #font_1{
+            font:italic bold small-caps 25px/25px "微软雅黑",Arial;
+        }
+    /* 如果将行高设置在 font之前 将会被font覆盖导致无法看到效果 所以需要将行高写入font中
+       后者写在font属性后面即可*/
+    </style>
+</head>
+<body>
+<!--倾斜程度上来说 oblique倾斜程度略大于italic-->
+<p style="font-style:italic;font-variant:small-caps">italic 这是斜体文字</p>
+<p style="font-style:oblique;">oblique 这是倾斜文字</p>
+<p id="font_1">利用font属性直接设置五个属性</p>
+</body>
+</html>

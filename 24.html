@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    #btn{
+        height: 100px;
+        width: 100px;
+        background-color: #bfa;
+    }
+    </style>
+</head>
+<body>
+<div id="btn"></div>
+<button id="btn1">按钮</button>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    class LazyMan {
+      constructor(name) {
+        this.taskList = []
+        console.log('Hi I am '+name)
+        setTimeout(() => {
+          this.next();
+        }, 0);
+      }
+      eat (name) {
+        var that = this
+        var fun = (function (name){
+          return function (){
+            console.log('I am eating ' + name)
+            that.next()
+          }
+        })(name)
+        this.taskList.push(fun)
+        return this
+      }
+      sleep (time) {
+        var that = this
+        var fun = (function(time) {
+          return function () {
+            setTimeout(()=> {
+              console.log('等待了'+time)
+              that.next()
+            }, time)
+          }
+        })(time)
+        this.taskList.push(fun)
+        return this
+      }
+      sleepFirst = (time) => {
+        var fun = ((time)=> {
+         return ()=>{
+           setTimeout(()=>{
+             console.log('等待了'+time)
+             this.next()
+           }, time)
+         }
+        })(time)
+        this.taskList.unshift(fun)
+        return this
+      }
+      next = () => {
+        var fun = this.taskList.shift()
+        fun && fun()
+      }
+    }
+
+    // function isurl (url) {
+    //   try {
+    //     new URL(url)
+    //     return true
+    //   }catch(err){
+    //     return err
+    //   }
+    // }
+    // console.log(isurl('http://www.baidu.com'))
+
+    // var a = {
+    //   i:1,
+    //   valueOf : function() {
+    //     return a.i++
+    //   }
+    // };
+    // if(a == 1 && a == 2 && a == 3){
+    //   console.log(1);
+    // }
+    var f1 = function(){alert('函数绑定')}
+    document.getElementById("btn").addEventListener("click",f1);
+    //点击第二个按钮把第一个按钮的第一个点击事件解绑
+    document.getElementById("btn").onclick=function () {alert('属性绑定')}
+      //解绑事件的时候,需要在绑定事件的时候,使用命名函数
+    document.getElementById("btn1").onclick = function () {
+      alert('解绑')
+      document.getElementById("btn").removeEventListener("click",f1);
+    }
+
+</script>
+</body>
+</html>

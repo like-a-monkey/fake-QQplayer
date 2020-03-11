@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+}
+.content{
+    height:480px;
+    width:320px;
+
+    margin:100px auto;
+    background:url("game_bg.jpg");
+    position:relative;
+}
+.content h1{
+    color:white;
+    margin-left:70px;
+}
+.content .time{
+    height:16px;
+    width:180px;
+    background:url("progress.png");
+    position:absolute;
+    left:63px;
+    top:66px;
+}
+.content .start{
+    position:absolute;
+    height:35px;
+    width:150px;
+    font:20px/35px "微软雅黑";
+    color:white;
+    text-align: center;
+    left:85px;
+    top:315px;
+    border:none;
+    background:linear-gradient(#E55C3D,#C50000);
+    border-radius:20px;
+}
+.content .rule{
+    position:absolute;
+    background-color: #bfa;
+    top:480px;
+    width:320px;
+    text-align: center;
+}
+.rules,.content .restart{
+    position:absolute;
+    top:0;
+    left:0;
+    height:480px;
+    width:320px;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.rules p{
+    margin:70px 0 0 80px;
+    color:white;
+
+}
+.rules span{
+    color:white;
+    background-color: red;
+    display:inline-block;
+    width:50px;
+    height: 25px;
+    margin:70px 0 0 140px;
+    font-size:18px;
+}
+.content .restart button{
+    position:absolute;
+    height:35px;
+    width:150px;
+    font:20px/35px "微软雅黑";
+    color:white;
+    text-align: center;
+    left:85px;
+    top:315px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(#74ACCF,#007DDC);
+}
+.content .restart p{
+    margin:180px 0 0 35px;
+    color:#ff4500;
+    font-size:50px;
+    text-shadow: 3px 3px 0 white;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .box2{
+            border:2px solid purple;
+
+        }
+        .box3{
+            height:300px;
+            width:100px;
+            background-color:blue;
+            float:right;
+        }
+        /*  在解决高度坍塌的问题也可以使用表格 因为它也是块元素在消除浮动影响后
+        可以撑起父类，然后在解决父类子类垂直外边距重叠的问题多加一个clear消除浮动也
+        不会有其他副作用 二者合一便可以达到同时解决两种问题的统一方法 以后都可以这么使用
+        只需要在会出现这种问题的父类元素前加入clearfix类即可 */
+        .clearfix:after,.clearfix:before{
+            content:"";
+            display:table;
+            clear:both;
+        }
+
+
+        .box{
+            height:200px;
+            width:200px;
+            background-color:#bfa;
+        }
+        .box1
+        {
+            margin-top:100px;
+            height:100px;
+            width:100px;
+            background-color:red;
+        }
+        /* 在父类box一开始的地方增加一个空表格来隔开 box1与box 使得二者的垂直外边距不重叠 */
+        /*.box:before{*/
+        /*    content:"";*/
+        /*    display:table;*/
+        /*}*/
+
+    </style>
+
+</head>
+<body>
+<div class="box clearfix">
+    <div class="box1">
+    </div>
+</div>
+<div class="box2 clearfix">
+    <div class="box3">
+
+    </div>
+</div>
+</body>
+</html>

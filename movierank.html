@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影排行榜</title>
+</head>
+<body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('li').hover(function(){
+            $(this).addClass('current');
+        },function(){
+            $(this).removeClass('current');
+        });
+    });
+</script>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .outer{
+        margin:50px auto;
+        border:1px solid black;
+        width:400px;
+    }
+    img{
+        width:160px;
+        height:135px;
+        float:left;
+        margin-right:10px;
+    }
+    .pic a{
+        font:8px/1 "微软雅黑";
+
+    }
+    .pic{
+        overflow: hidden;
+    }
+    .outer>h1{
+        font-size:20px;
+        line-height:35px;
+        color:deeppink;
+        padding-left:10px;
+    }
+    ul{
+        list-style:none;
+    }
+    li{
+        padding:5px 10px;
+        border-top:1px dashed gray;
+    }
+    li:nth-child(9){
+        border-bottom:1px dashed gray;
+    }
+    .pink{
+        background-color:deeppink;
+    }
+    ul span{
+        display:inline-block;
+        height:20px;
+        width:20px;
+        background-color:pink;
+        text-align:center;
+        line-height:20px;
+
+    }
+    .hidden{
+        display: none;
+    }
+    .current .hidden{
+        display:block;
+    }
+/* 注意此处设计巧妙 通过在父类添加类就可以让子类显示出来 利用后写覆盖先写的技巧
+*/
+</style>
+<div class="outer">
+    <h1>电影排行榜</h1>
+    <ul>
+        <li><span class="pink">1</span>电影名字
+            <div class="pic hidden">
+                <img src="images/zhanlang.png" alt="">a
+                <a>战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍</a>
+            </div>
+        </li>
+
+        <li><span class="pink">2</span>电影名字
+            <div class="pic hidden">
+                <img src="images/zhanlang.png" alt="">a
+                <a>战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍</a>
+            </div>
+        </li>
+
+        <li><span class="pink">3</span>电影名字
+            <div class="pic hidden">
+                <img src="images/zhanlang.png" alt="">a
+                <a>战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍</a>
+            </div>
+        </li>
+
+        <li><span>4</span>电影名字
+            <div class="pic hidden">
+                <img src="images/zhanlang.png" alt="">a
+                <a>战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍</a>
+            </div>
+        </li>
+
+        <li><span>5</span>电影名字
+            <div class="pic hidden">
+                <img src="images/zhanlang.png" alt="">a
+                <a>战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍战狼介绍</a>
+            </div>
+
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

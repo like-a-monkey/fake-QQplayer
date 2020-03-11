@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器动画</title>
+    <style type="text/css">
+        #box1{
+            height:100px;
+            width:100px;
+            background-color:red;
+            position:absolute;
+            left:0;
+        }
+        #box2{
+            height:100px;
+            width:100px;
+            background-color:yellow;
+            position:absolute;
+            left:0;
+            top:200px;
+        }
+        .box2{
+            width:0;
+            height:935px;
+            position:absolute;
+            border-left:1px solid black;
+            left:800px;
+            top:0;
+        }
+    </style>
+    <script type="text/javascript">
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];}
+            else{
+                return obj.currentStyle[name];}
+        }//取出来的 函数一般定义在onload外面
+        function move(obj,speed,target,eventstr,callback){
+            var current = getStyle(obj,eventstr);//获取一开始传入位置 判断速度方向
+            current = parseInt(current);
+            if(current>target){
+                speed = -speed;
+            }
+            clearInterval(obj.timer);
+            obj.timer=setInterval(fun,30);
+            //使用对象属性来储存定时器编号 ,方便同时设置多个定时器
+            function fun(){
+                var oldvalue = getStyle(obj,eventstr);
+                oldvalue = parseInt(oldvalue);//去px 方便速度计算
+
+                obj.style[eventstr] = oldvalue+speed+"px";
+                var newvalue = oldvalue + speed;
+                console.log("still working");
+                //设置超过target时自动停下
+                if(speed>0){
+                    if(newvalue>=target){
+                        obj.style[eventstr]=target+"px";
+                        clearInterval(obj.timer);
+                        callback && callback();
+                    }
+                }
+                else{
+                    if(newvalue<=target){
+                        obj.style[eventstr] = target + "px";
+                        clearInterval(obj.timer);
+                        callback && callback();
+                    }
+                }
+            }
+
+        }
+        window.onload = function(){
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var btn4 = document.getElementById("btn4");
+        var btn5 = document.getElementById("btn5");
+        var box1 = document.getElementById("box1");
+        btn1.onclick = function(){
+            //alert(getStyle(box1,"left"));
+            move(box1,17,800,"left");
+        };
+        btn2.onclick = function(){
+            move(box1,17,0,"left");
+        };
+            btn3.onclick = function(){
+                //alert(getStyle(box1,"left"));
+                move(box2,17,800,"left");
+            };
+            btn4.onclick = function(){
+                move(box2,17,0,"left");
+            };
+            btn5.onclick = function(){
+                move(box2,17,800,"width",function(){alert("123");});
+            };
+
+        };
+    </script>
+</head>
+<body>
+<button id="btn1">box1向右移动</button>
+<button id="btn2">box1向左移动</button>
+<button id="btn3">box2向右移动</button>
+<button id="btn4">box2向左移动</button>
+<button id="btn5">box2测试</button>
+<div id="box1"></div>
+<div id="box2"></div>
+<div class="box2"></div>
+</body>
+</html>

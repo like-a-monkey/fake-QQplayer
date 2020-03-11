@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        // $(function(){
+        // var inpu = document.getElementsByTagName('input')[0];
+        // //inpu.value=1000;此时并没有将节点属性上的value改变而使将文本框中的值改变
+        // $('input').attr('value','1000');此时将节点属性上的value改变
+        // });
+        $(function(){
+           //   var btns=$('button');
+            var btns = document.getElementsByTagName('button');
+           //console.log(btns.eq(1));//jquery对象
+           console.log(btns[1]);//html对象 js原生
+            btns[0].onclick = function(){
+                $('div').addClass('class1 class2');
+
+            };
+            btns[1].onclick = function(){
+                $('div').removeClass('class1 class2');
+            };
+            btns[2].onclick = function(){
+                $('div').toggleClass('class1');
+            };
+            btns[3].onclick = function(){
+                $('div').toggleClass('class2');
+            };
+        });
+    </script>
+    <style type="text/css">
+        .class1{
+            background-color: #bfa;
+            width:100px;
+            height:100px;
+        }
+        .class2{
+            border:5px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--<input type="text" value="100">-->
+<button>添加类</button>
+<button>删除类</button>
+<button>切换类1</button>
+<button>切换类2</button>
+<div class="box"></div>
+</body>
+</html>

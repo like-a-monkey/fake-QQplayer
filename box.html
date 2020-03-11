@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子属性</title>
+    <style type="text/css">
+        /*边框属性border-width 边框大小 border-style 边框样式 border-color 边框颜色
+        缺一不可   我们在定义盒子中的width和height只是设置了内容区的大小而不是盒子的整个大小
+        盒子大小由内容区 边框  内边距来共同决定 */
+        .box{
+
+            height:200px;
+            width:200px;
+            background:#bfa;
+            border:solid red 10px;
+            padding:50px 50px;
+
+        }
+        /*高度宽度继承父类的内容区高宽*/
+        .box1{
+            height:100%;
+            width:100%;
+            background:blue;
+        }
+        /* 当我们在设置 border-width时候 只输入一个值代表四条边框的宽度都为那个值
+        只设置两个值时，表示边框上下为第一个值 左右为第二个值
+        只设置三个值时，表示边框上为第一个值，左右为第二个值，下为第三个值
+        padding margin border-style border-color同上*/
+    </style>
+</head>
+<body>
+<div class="box"><div class="box1">
+
+</div>
+
+</div>
+
+</body>
+</html>

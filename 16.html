@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二级菜单</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+.fir{
+   border:1px solid black;
+    width:400px;
+    margin:100px auto;
+    list-style: none;
+    border-radius:10px;
+}
+.sec{
+    list-style: none;
+    background-color: mediumpurple;
+    border-top:1px solid black;
+}
+    .sec li:hover{
+        background-color: red;
+    }
+.fir li{
+    text-indent:30px;
+    border-top:1px solid black;
+    line-height:40px;
+}
+    .fir li:first-child{
+        border-top:none;
+    }
+    .hidden{
+        display:none;
+    }
+</style>
+<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+     $(function(){
+        $('.fir li').click(function(event){
+
+            $(this).siblings().children("ul").slideUp(500);//选择一级菜单其他兄弟元素的子元素ul 做slideUp
+            $(this).children("ul").stop();//取消前一个动画效果 防止动画队列拥堵 导致重复执行动画 用户无法点击
+            $(this).children("ul").slideToggle(500);//让点击的那个菜单展开
+            event.stopPropagation();//取消冒泡
+
+        });
+
+     });
+
+</script>
+<body>
+<ul class="fir">
+    <li>一级菜单<span></span>
+    <ul class="sec hidden">
+     <li>二级菜单</li>
+     <li>二级菜单</li>
+     <li>二级菜单</li>
+     <li>二级菜单</li>
+     <li>二级菜单</li>
+    </ul>
+    </li>
+    <li>一级菜单<span></span>
+        <ul class="sec hidden">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span></span>
+        <ul class="sec hidden">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span></span>
+        <ul class="sec hidden">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span></span>
+        <ul class="sec hidden">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>一级菜单<span></span>
+        <ul class="sec hidden">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

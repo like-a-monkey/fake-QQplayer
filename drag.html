@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style type="text/css">
+        #box1{
+            height:100px;
+            width:100px;
+            background-color:red;
+            position:absolute;
+        }
+        #box2{
+            height:100px;
+            width:100px;
+            position:absolute;
+            top:300px;
+            left:300px;
+            background-color:yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            function drag(box1){
+                //var box1 = document.getElementById("box1");
+                box1.onmousedown = function(event){
+                    //console.log(document.onmouseup);
+                    var xcor = event.clientX-box1.offsetLeft;
+                    var ycor = event.clientY-box1.offsetTop;
+                    document.onmousemove = function(event){
+                        event = event || window.event;
+                        left1 = event.clientX-xcor;
+                        top1 = event.clientY-ycor;
+                        box1.style.left = left1+"px";
+                        box1.style.top = top1+"px";
+
+                    };
+                    document.onmouseup = function(event){
+                        // alert(document.onmouseup);
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    };
+                    //构思巧妙 通过不断地反复定义以及反复清空来达到一次性函数的效果
+                    //你在box1点下鼠标的瞬间来定义onmousemove onmouseup这两个函数
+                    //但是在鼠标up的瞬间你的函数会被清空 也就是说如果你在box1外部点击
+                    //就不会再出发move up响应了 哪怕绑定的对象是document元素
+                    //这一拖拽的思路最重要的是要理解结构 理解为何要将up move定义在down响应中
+                    return false;
+                    //由于浏览器中也有默认的类似拖拽的行为  所有我们可以在此处return false
+                    // 来取消这个默认行为
+                };
+
+
+            }
+            drag(box1);//封装成为函数
+            drag(box2);//封装成为函数
+
+
+
+
+
+        };
+
+    </script>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+          height:200px;
+            width:200px;
+            background-color:#bfa;
+        }
+        .son{
+            height:100px;
+            width:100px;
+            background-color:red;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+        // $('button').on('click.zh',function(){
+        //    alert(123);//事件的命名空间 对应事件后可以加.xxxx这样时表示给这个事件单独起了一个名字
+        //     //用触发器触发时就可以分开了
+        // });
+        //     $('button').on('click.ls',function(){
+        //         alert(456);//事件的命名空间
+        //     });
+        // $('button').trigger('click.ls');
+        // //利用trigger子元素带命名空间
+            $('.father').on('click.zs',function(){
+                alert('zs click.zs father');
+            });
+            $('.father').on('click.ls',function(){
+                alert('ls click.ls father');
+            });
+            $('.son').on('click.zs',function(){
+                alert('zs click.zs son');
+            });
+            $('.son').on('click',function() {
+                alert('zs click son');
+            });
+            //$('.son').trigger('click');//直接触发click  相当于在页面点击了son
+            //此时会触发四个click事件 意味着不加命名空间，会把带命名和不带命名的一起执行或冒泡了
+            //$('.son').trigger('click.zs');//此时会触发 son click.zs ，father click.zs
+            //两个事件 说明加了命名空间就只会执行或冒泡带命名空间的且命名空间相同的事件
+        });
+    </script>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<button>按钮</button>
+</body>
+</html>

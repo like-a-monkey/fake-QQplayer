@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c70eb4a-9008-4827-bc87-4b7cf8feebe1" name="默认的" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Rh0u6XKbRMsXSeCV2eD4MSLQVG" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/!action.NewScratchFile.text.with.new!" value="HTML" />
+    <property name="last_opened_file_path" value="E:/React/redux-base" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebStorm\new_file\images" />
+      <recent name="E:\webstrom\new_file" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.test.js">
+    <configuration name="test1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/new_file/test1.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Javascript.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="Javascript.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <configuration name="for.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="for.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <configuration name="oop.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="oop.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.test.js" />
+        <item itemvalue="Node.js.oop.js" />
+        <item itemvalue="Node.js.Javascript.js" />
+        <item itemvalue="Node.js.for.js" />
+        <item itemvalue="JavaScript Debug.test1.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c70eb4a-9008-4827-bc87-4b7cf8feebe1" name="默认的" comment="" />
+      <created>1570104239409</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570104239409</updated>
+      <workItem from="1570104240613" duration="6932000" />
+      <workItem from="1570155554674" duration="11866000" />
+      <workItem from="1570195117855" duration="204000" />
+      <workItem from="1570196441457" duration="2572000" />
+      <workItem from="1570240319945" duration="4203000" />
+      <workItem from="1570249055101" duration="579000" />
+      <workItem from="1570249823418" duration="8876000" />
+      <workItem from="1570284746428" duration="4693000" />
+      <workItem from="1570331612977" duration="9677000" />
+      <workItem from="1570415702387" duration="6943000" />
+      <workItem from="1570453037316" duration="13756000" />
+      <workItem from="1570499358328" duration="6987000" />
+      <workItem from="1570507268892" duration="7529000" />
+      <workItem from="1570536369359" duration="6040000" />
+      <workItem from="1570588533962" duration="6042000" />
+      <workItem from="1570599486016" duration="1316000" />
+      <workItem from="1570601327966" duration="11276000" />
+      <workItem from="1570676410172" duration="16433000" />
+      <workItem from="1570755201153" duration="22897000" />
+      <workItem from="1570842445131" duration="14231000" />
+      <workItem from="1570936378659" duration="27309000" />
+      <workItem from="1571014272194" duration="3274000" />
+      <workItem from="1571028324553" duration="14402000" />
+      <workItem from="1571107375119" duration="13389000" />
+      <workItem from="1571197608090" duration="1180000" />
+      <workItem from="1571198808865" duration="19367000" />
+      <workItem from="1571277338294" duration="27181000" />
+      <workItem from="1571364911434" duration="8463000" />
+      <workItem from="1571381198212" duration="14863000" />
+      <workItem from="1571469968734" duration="14874000" />
+      <workItem from="1571535069040" duration="29249000" />
+      <workItem from="1571623777398" duration="4271000" />
+      <workItem from="1571637247488" duration="20314000" />
+      <workItem from="1571706812945" duration="3113000" />
+      <workItem from="1571713418918" duration="19602000" />
+      <workItem from="1571740345986" duration="11958000" />
+      <workItem from="1571794106905" duration="4054000" />
+      <workItem from="1571883867923" duration="7510000" />
+      <workItem from="1571993827873" duration="5682000" />
+      <workItem from="1572055165932" duration="3665000" />
+      <workItem from="1572143712386" duration="16140000" />
+      <workItem from="1572235195918" duration="68000" />
+      <workItem from="1572412435285" duration="2894000" />
+      <workItem from="1572578686259" duration="3558000" />
+      <workItem from="1572618041385" duration="5889000" />
+      <workItem from="1572965984907" duration="44000" />
+      <workItem from="1574328555296" duration="598000" />
+      <workItem from="1574330752614" duration="22000" />
+      <workItem from="1574330963823" duration="60000" />
+      <workItem from="1574331200791" duration="10000" />
+      <workItem from="1574331259763" duration="589000" />
+      <workItem from="1574738620752" duration="152000" />
+      <workItem from="1583319616915" duration="6148000" />
+      <workItem from="1583373550700" duration="9652000" />
+      <workItem from="1583410066852" duration="3037000" />
+      <workItem from="1583459891121" duration="12510000" />
+      <workItem from="1583551150918" duration="20506000" />
+      <workItem from="1583631932764" duration="2497000" />
+      <workItem from="1583635704714" duration="1712000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/getAdult.js</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/06.html</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/qqPlayer/player.js</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/qqPlayer/player.js</url>
+          <line>12</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

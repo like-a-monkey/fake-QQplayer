@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../js/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="qqPlayer.css">
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="player.js"></script>
+    <script src="progress.js"></script>
+    <script src="lyric.js"></script>
+    <script src="qqPlayer.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href="" class="logo"></a>
+    <ul class="register">
+        <li>登录</li>
+        <li>注册</li>
+    </ul>
+</div>
+<div class="bodyer">
+    <div class="bodyer_in">
+        <div class="bodyer_in_left">
+            <div class="singFunction">
+                <span><i></i>收藏</span>
+                <span><i></i>添加到</span>
+                <span><i></i>下载</span>
+                <span><i></i>删除</span>
+                <span><i></i>清空列表</span>
+            </div>
+            <div class="singList" data-mcs-theme="minimal-dark">
+                <ul>
+                    <li>
+                        <div class="list_check"><span></span></div>
+                        <div class="list_number"></div>
+                        <div class="list_name">歌曲</div>
+                        <div class="list_singer">歌手</div>
+                        <div class="list_time">时长</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bodyer_in_right">
+            <div class="album">
+                <a href="javascript:;"class="albumImg">
+                    <img src="1/images/lnj.jpg" alt="">
+                </a>
+                <div class="song_name">歌曲名称:<a href="javascript:;">从零玩转jq</a></div>
+                <div class="singer_name">歌手名:<a href="javascript:;">李南江</a></div>
+                <div class="album_name">专辑名:<a href="javascript:;">从零玩转系列</a></div>
+            </div>
+            <div class="lyric">
+                <div class="lyricBox">
+                <ul class="song_lyric">
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_in">
+        <a href="javascript:;" class="music_pre"></a>
+        <a href="javascript:;" class="music_play"></a>
+        <a href="javascript:;" class="music_next"></a>
+        <div class="songIntroduce">
+            <div class="songMessage">
+                <span>从零玩转jq/李南江</span>
+                <span>00:54/03:37</span>
+            </div>
+            <div class="progressBar">
+                <div class="barBgc">
+                <div class="barRel"></div>
+            </div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <span id="mode"><a href="javascript:;" class="mode"></a></span>
+        <a href="javascript:;" class="fav"></a>
+        <a href="javascript:;" class="downLoad"></a>
+        <a href="javascript:;" class="comment"></a>
+        <a href="javascript:;" class="only"></a>
+        <div class="playerVoice">
+            <a href="javascript:;"></a>
+            <div class="voiceBarBg">
+                <div class="voiceBar"></div>
+            </div>
+            <div class="voice_dot"></div>
+        </div>
+    </div>
+</div>
+<div class="mask_bg"></div>
+<!--太卡了 先关咯-->
+<div class="mask"></div>
+<audio src=""></audio>
+</body>
+</html>
